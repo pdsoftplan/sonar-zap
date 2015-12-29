@@ -1,5 +1,5 @@
 # Zap SonarQube Plugin
----
+[![Build Status](https://travis-ci.org/pdsoftplan/sonar-zap.svg?branch=master)](https://travis-ci.org/pdsoftplan/zap-java-api)
 
 ## Sumário
 
