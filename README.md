@@ -1,5 +1,6 @@
 # Zap SonarQube Plugin
 [![Build Status](https://travis-ci.org/pdsoftplan/sonar-zap.svg?branch=master)](https://travis-ci.org/pdsoftplan/sonar-zap)
+[![Coverage Status](https://coveralls.io/repos/pdsoftplan/sonar-zap/badge.svg?branch=master&service=github)](https://coveralls.io/github/pdsoftplan/sonar-zap?branch=master)
 
 ## Sumário
 
