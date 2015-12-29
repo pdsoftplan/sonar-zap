@@ -20,7 +20,7 @@ public final class ZapReportParser {
 	private static final String ALERTS_REGEX = "<a.*href.*=.*\"#(high|medium|low|info).*<font.*>(\\d+)</font>";
 	private static final Pattern ALERTS_PATTERN = Pattern.compile(ALERTS_REGEX);
 	
-	private double alerts = 0;
+	private double alerts;
 	private Map<String, Double> alertsMap = new HashMap<>();
 	
 	private ZapReportParser() {}
@@ -62,6 +62,7 @@ public final class ZapReportParser {
 		Double levelAlerts = alertsMap.get(level);
 		if (levelAlerts != null) {
 			alerts += levelAlerts;
+			LOGGER.debug("ZAP {} alerts = {}", level, levelAlerts);
 		} else {
 			LOGGER.warn("ZAP {} alerts number was not found in the report.", level);
 		}

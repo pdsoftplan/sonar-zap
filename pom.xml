@@ -50,7 +50,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
+		<java.version>1.7</java.version>
 		<sonar.version>5.1</sonar.version>
 		<sonar.pluginClass>br.com.softplan.security.zap.sonar.ZapPlugin</sonar.pluginClass>
 		<sonar.pluginKey>zap</sonar.pluginKey>
