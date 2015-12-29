@@ -1,0 +1,52 @@
+<%
+	alerts = measure('zap-alerts')
+	if alerts
+%>
+
+<div class="widget-row">
+  <div class="widget-span widget-span-12">
+  
+    <div class="widget-measure widget-measure-main">
+      <span class="widget-label"><%= message('widget.zap.alerts') -%></span>
+      <span class="nowrap">
+        <%= format_measure(alerts, :url => url_for_drilldown('zap-alerts')) %>
+        <%= dashboard_configuration.selected_period? ? format_variation('zap-alerts') : trend_icon('zap-alerts') -%>
+      </span>
+    </div>
+
+    <div class="widget-measure">
+      <span class="widget-label"><%= message('widget.zap.highAlerts') -%></span>
+      <span class="nowrap">
+        <%= format_measure(measure('zap-high-alerts'), :url => url_for_drilldown('zap-high-alerts')) %>
+        <%= dashboard_configuration.selected_period? ? format_variation('zap-high-alerts') : trend_icon('zap-high-alerts') -%>
+      </span>
+    </div>
+
+    <div class="widget-measure">
+      <span class="widget-label"><%= message('widget.zap.mediumAlerts') -%></span>
+      <span class="nowrap">
+        <%= format_measure(measure('zap-medium-alerts'), :url => url_for_drilldown('zap-medium-alerts')) %>
+        <%= dashboard_configuration.selected_period? ? format_variation('zap-medium-alerts') : trend_icon('zap-medium-alerts') -%>
+      </span>
+    </div>
+
+    <div class="widget-measure">
+      <span class="widget-label"><%= message('widget.zap.lowAlerts') -%></span>
+      <span class="nowrap">
+        <%= format_measure(measure('zap-low-alerts'), :url => url_for_drilldown('zap-low-alerts')) %>
+        <%= dashboard_configuration.selected_period? ? format_variation('zap-low-alerts') : trend_icon('zap-low-alerts') -%>
+      </span>
+    </div>
+
+    <div class="widget-measure">
+      <span class="widget-label"><%= message('widget.zap.informationalAlerts') -%></span>
+      <span class="nowrap">
+        <%= format_measure(measure('zap-informational-alerts'), :url => url_for_drilldown('zap-informational-alerts')) %>
+        <%= dashboard_configuration.selected_period? ? format_variation('zap-informational-alerts') : trend_icon('zap-informational-alerts') -%>
+      </span>
+    </div>
+
+  </div>
+</div>
+
+<% end %>

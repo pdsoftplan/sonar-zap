@@ -1,0 +1,113 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>br.com.softplan.security.zap</groupId>
+	<artifactId>sonar-zap-plugin</artifactId>
+	<version>1.0.0-0</version>
+	<packaging>sonar-plugin</packaging>
+	<name>ZAP SonarQube Plugin</name>
+
+	<description>Feed SonarQube with ZAP reports</description>
+	<url>https://github.com/pdsoftplan/sonar-zap</url>
+	<inceptionYear>2015</inceptionYear>
+	<organization>
+		<name>Softplan</name>
+		<url>https://www.softplan.com.br</url>
+	</organization>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>tfcporciuncula</id>
+			<name>Thiago Porciúncula</name>
+			<organization>Softplan</organization>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git@github.com:pdsoftplan/sonar-zap.git</connection>
+		<developerConnection>scm:git:git@github.com:pdsoftplan/sonar-zap.git</developerConnection>
+		<url>https://github.com/pdsoftplan/sonar-zap</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/pdsoftplan/sonar-zap/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>Travis</system>
+		<url>https://travis-ci.org/pdsoftplan/sonar-zap</url>
+	</ciManagement>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<sonar.version>5.1</sonar.version>
+		<sonar.pluginClass>br.com.softplan.security.zap.sonar.ZapPlugin</sonar.pluginClass>
+		<sonar.pluginKey>zap</sonar.pluginKey>
+		<sonar.pluginName>ZAP</sonar.pluginName>
+		<sonar.pluginDescription><![CDATA[Feed SonarQube with <a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">ZAP</a> reports.]]></sonar.pluginDescription>
+
+		<maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
+		<sonar-packaging-maven-plugin.version>1.13</sonar-packaging-maven-plugin.version>
+		<junit.version>4.12</junit.version>
+		<mockito.version>1.10.19</mockito.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.codehaus.sonar</groupId>
+			<artifactId>sonar-plugin-api</artifactId>
+			<version>${sonar.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>${mockito.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.sonar</groupId>
+				<artifactId>sonar-packaging-maven-plugin</artifactId>
+				<version>${sonar-packaging-maven-plugin.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<pluginClass>${sonar.pluginClass}</pluginClass>
+					<pluginKey>${sonar.pluginKey}</pluginKey>
+					<pluginName>${sonar.pluginName}</pluginName>
+					<pluginDescription>${sonar.pluginDescription}</pluginDescription>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
