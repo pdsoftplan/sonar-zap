@@ -51,3 +51,5 @@ However, it's also possible to set the report path globally or locally for any s
 ![ZAP report path](readme-images/zap-report-path.png)
 
 > If the report is found at the default path (`target/zap-reports/zapReport.html`), it is not necessary to define a value for the property.
+
+:zap:
