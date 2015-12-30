@@ -22,11 +22,9 @@ You can also create rules in a Quality Gate to trigger warnings and errors based
 
 > The plugin is compatible with SonarQube 5.1 onwards.
 
-To install and use the plugin, just go through the following steps:
+To install and use the plugin, just download the JAR file, copy it to `[your-sonarqube-installation]/extensions/plugins`, and restart SonarQube.
 
-- Clone this repo and run `mvn package`;
-- Verify the JAR file was created at `target/sonar-zap-plugin-[version].jar`;
-- Copy it to `[your-sonarqube-installation]/extensions/plugins` and restart SonarQube.
+[Click here to download the plugin](https://github.com/pdsoftplan/sonar-zap/releases/download/1.0.0-0/sonar-zap-plugin-1.0.0-0.jar)
 
 If the plugin is successfully installed, it will be present in the SonarQube update center, like in the image below:
 
